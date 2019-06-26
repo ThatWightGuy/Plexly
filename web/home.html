@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coming Soon</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/default.css">
+</head>
+<body>
+	<script type="text/javascript">
+		var words = [
+			'Amazing', 
+			'Fun', 
+			'Great', 
+			'Awesome',
+			'Wonderful',
+			'Cool',
+			'Enjoyable',
+			'Tremendous',
+			'Terrific',
+			'Remarkable',
+			'Sensational',
+			'Superb',
+			'Incredible',
+			'Pleasant',
+			'Phenomenal'
+		]; 
+
+		$(document).ready(function(){
+			var rand = Math.floor(Math.random() * words.length-1);
+
+			$('#i_adj').text(words[rand]);
+
+			$('#i_adj').click(function(){
+				alert('WHAT\'S UP!');
+			});
+			
+			setInterval(function(){
+				rand = Math.floor(Math.random() * words.length-1);
+
+				$('#i_adj').fadeOut(function(){
+					$(this).html(words[rand]).fadeIn(); 
+				});
+
+			}, 3000);
+		});
+	</script>
+
+	<div class="container">
+		<h1 id="i_rest">Making The Internet <span id="i_adj">If you are reading this, congratulations! You found something wrong with my website! YAY!</span> Again</h1>
+	</div>
+</body>
+</html>
